@@ -18,10 +18,8 @@ ARG STRIPE_PRODUCT_ID
 ARG ORIGIN
 
 WORKDIR /app
-COPY package.json package.json
-RUN bun install
-
 COPY . .
+RUN bun install
 RUN bun run build
 
 EXPOSE 3000
